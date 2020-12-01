@@ -16,6 +16,9 @@ set shiftround
 set autoindent
 set autochdir
 
+set noswapfile
+
+let g:mta_use_matchparen_group = 1
 "----Visuals----"
 "colorscheme atom
 colorscheme elflord
@@ -30,12 +33,19 @@ set wrap!  "Stop line-wrap
 "----File Encoding----"
 set encoding=utf-8
 set fileformats=unix,dos,mac
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+"set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8,sjis
 
 "-----Key Mappings----"
 nmap ,ev :tabedit $MYVIMRC<cr>
 nmap ,www :e d:\laragon\www\
 nmap ,todo :e todo.txt<cr>
+nmap ,readme :e readme.md<cr>
+nmap ,note :e d:\temp\note.txt
+
+if has("gui_win32")
+ nmap <C-S-V> "+gP
+endif
 
 "----Add simple highlight removal"
 nmap ,<space> :nohlsearch<cr>
